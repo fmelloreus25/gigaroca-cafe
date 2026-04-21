@@ -1,0 +1,112 @@
+/* Paleta de Cores GigaRoça */
+:root {
+  --bg-fundo: #FDF8F5;       
+  --marrom-cafe: #4E342E;    /* Um pouco mais suave para a barra lateral */
+  --marrom-escuro: #3E2723;  /* Cor de fundo quando passa o mouse no menu */
+  --laranja-doce: #D84315;   
+  --madeira-clara: #D7CCC8;  
+  --branco-papel: #FFFFFF;   
+  --texto-cinza: #5D4037;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-fundo);
+  color: var(--texto-cinza);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* O Layout Mestre: Divide a tela em duas colunas */
+.layout-mestre {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Estilos da Barra Lateral (Sidebar) */
+.sidebar {
+  width: 260px;
+  background-color: var(--marrom-cafe);
+  color: var(--branco-papel);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.sidebar-logo {
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: 1px solid var(--marrom-escuro);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--laranja-doce);
+}
+
+.sidebar-menu {
+  flex: 1;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-item {
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-left: 4px solid transparent;
+  color: #D7CCC8; /* Letra um pouco mais apagada quando inativo */
+}
+
+.menu-item:hover {
+  background-color: var(--marrom-escuro);
+  color: var(--branco-papel);
+}
+
+.menu-item.ativo {
+  background-color: var(--marrom-escuro);
+  border-left: 4px solid var(--laranja-doce);
+  color: var(--laranja-doce);
+  font-weight: bold;
+}
+
+/* Estilos da Área de Conteúdo (Direita) */
+.area-conteudo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-fundo);
+  overflow-y: auto;
+}
+
+.cabecalho-pagina {
+  padding: 2rem;
+  background-color: var(--branco-papel);
+  border-bottom: 1px solid var(--madeira-clara);
+}
+
+.cabecalho-pagina h1 {
+  margin: 0;
+  color: var(--marrom-cafe);
+}
+
+.conteudo-dinamico {
+  padding: 2rem;
+}
+
+/* O cartão de boas-vindas genérico para preencher a tela por enquanto */
+.cartao-placeholder {
+  background-color: var(--branco-papel);
+  border: 1px dashed var(--laranja-doce);
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: center;
+  color: var(--texto-cinza);
+}
