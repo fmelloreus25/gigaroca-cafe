@@ -5,3 +5,6 @@ __pycache__/
 # Ignora pastas de sistema do Windows/Mac
 .DS_Store
 Thumbs.db
+
+# Ignora o cofre de senhas
+.env
